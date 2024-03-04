@@ -1,6 +1,6 @@
 {
   "name": "tw-accent-colors",
-  "version": "2.1.2",
+  "version": "1.0.0",
   "author": "ilsyaa",
   "description": "Dynamic accent color TailwindCSS.",
   "main": "src/index.js",
