@@ -63,3 +63,6 @@ Let the code speak:
   </p>
 </div>
 ```
+
+## License
+MIT
