@@ -12,6 +12,8 @@ module.exports = plugin.withOptions(
       ? options.cssVarsPrefix
       : 'tw-ta';
 
+    const attr = (options.attr ? options.attr : 'lazy-accent');
+
     return ({ addBase }) => {
       const rootStyles = {};
       const baseStyles = {};
@@ -39,9 +41,9 @@ module.exports = plugin.withOptions(
 
           // Add color to root or base styles.
           if (options.root === name) {
-            rootStyles[`:root, [lazy-accent='${name}']`] = styles;
+            rootStyles[`:root, [${attr}='${name}']`] = styles;
           } else {
-            baseStyles[`[lazy-accent='${name}']`] = styles;
+            baseStyles[`[${attr}='${name}']`] = styles;
           }
         }
       });
