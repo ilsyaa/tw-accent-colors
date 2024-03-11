@@ -1,5 +1,6 @@
 const { generatePluginCss } = require('./helpers');
-const attr = "lazy-accent";
+
+const attr = 'lazy-accent';
 
 describe('with tailwindcss v3', () => {
   it('returns nothing if colors option is not specified.', () => {
@@ -71,10 +72,12 @@ describe('with tailwindcss v3', () => {
   });
 
   it('correctly generates selected base style selectors.', () => {
-    return generatePluginCss({ colors: ['sky', 'rose'], root: 'rose', attr }).then(
-      (css) => {
-        expect(css).toContain(`[${attr}='rose']`);
-      }
-    );
+    return generatePluginCss({
+      colors: ['sky', 'rose'],
+      root: 'rose',
+      attr,
+    }).then((css) => {
+      expect(css).toContain(`[${attr}='rose']`);
+    });
   });
 });

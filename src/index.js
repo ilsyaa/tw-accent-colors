@@ -6,13 +6,13 @@ const { hexToRgb, withOpacityValue } = require('./utils');
 module.exports = plugin.withOptions(
   (options = {}) => {
     // Early return if the colors option isn't specified.
-    if (!options.colors && !Array.isArray(options.colors)) return () => { };
+    if (!options.colors && !Array.isArray(options.colors)) return () => {};
 
     const cssVarsPrefix = options.cssVarsPrefix
       ? options.cssVarsPrefix
       : 'tw-ta';
 
-    const attr = (options.attr ? options.attr : 'lazy-accent');
+    const attr = options.attr ? options.attr : 'lazy-accent';
 
     return ({ addBase }) => {
       const rootStyles = {};
